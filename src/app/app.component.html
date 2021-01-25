@@ -1,0 +1,82 @@
+<div class="container"> <!--CONTENEDOR PRINCIPAL -->
+  <br>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary"><!--BARRA DE NAVEGACIÓN-->
+    <a class="navbar-brand" href="#">
+    <img src="assets/images/angular-lg.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Inmobiliaria</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/inicio']">Inicio<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" *ngFor="let category of categories">
+          <a class="nav-link" [routerLink]="['categoria', category.id]">{{category.name}}</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-right" *ngIf="!identity">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/registro']">Registro</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-right" *ngIf="identity ">
+        <li *ngIf="identity && identity.image" class="avatar_nav">
+            <div class="avatar_mask"> 
+            <img src="{{url + 'avatar/'+ identity.image}}" class="avatar-edit" />
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ identity.name +' '+identity.surname }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/crear-entrada']">Crear entrada</a>
+            <a class="dropdown-item" [routerLink]="['/crear-categoria']">Crear categoria</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/perfil', identity.sub]">Mi perfil</a>
+            <a class="dropdown-item" [routerLink]="['/ajustes']">Ajustes</a>
+            <a class="dropdown-item" [routerLink]="['/logout/1']">Salir</a>
+          </div>
+        </li>
+          </ul>
+    </div>
+  </nav><!-- CERRAR BARRA DE NAVEGACIÓN-->
+  <!--Contenido-->
+  <router-outlet></router-outlet>
+
+
+  <footer>
+    <hr>
+    <div class="footer_widget get_in_touch">
+          <div class="row">
+            <div class="">
+            </div>
+            <div class="">                                    
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Avenida Hipolito Yrigoyen 123 PISO 2 <br>
+               Córdoba Capital, Argentina</span>
+               <br>
+            </div>            
+            <div class="">
+              <span><i class="fa fa-phone" aria-hidden="true"></i> <a style="color:#fff" href="tel:5493513077390">351 3077 390</a></span> 
+              <br>            
+              <span><i class="far fa-envelope"></i> <a style="color:#fff" href="mailto:info@inmobiliaria.com.ar">info@inmobiliaria.com.ar</a></span> 
+              <br>
+            </div>
+            <div class="">            
+
+              <span><i class="far fa-clock"></i> Lunes a Viernes<br>
+              <strong>Ventas </strong><i class="fa fa-phone" aria-hidden="true"> <a style="color:#fff" href="tel:5493513077390">5493513077390</a></i><br>
+              <strong>Administración:</strong> 9hs a 13hs <i class="fa fa-phone" aria-hidden="true"> <a style="color:#fff" href="tel:5707050">5707050</a></i></span> 
+            </div>                              
+          </div>
+        </div> 
+    <hr>
+  </footer>
+</div><!-- CERRAR CONTENEDOR PRINCIPAL -->

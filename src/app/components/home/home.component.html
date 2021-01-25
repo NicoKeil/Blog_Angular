@@ -1,0 +1,14 @@
+<div class="loading" *ngIf="!posts">
+	Cargando...
+</div>
+
+<div class="container-fluid mt-3" *ngIf="posts">
+
+	<hr>
+
+		<!-- Listado de entradas -->
+	<post-list [posts]="posts"
+				[identity]="identity"
+				[url]="url"></post-list>
+
+</div>

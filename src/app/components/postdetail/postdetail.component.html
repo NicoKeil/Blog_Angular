@@ -1,0 +1,30 @@
+<div class="col-md-12" *ngIf=!post>
+	Cargando...
+</div>
+<div class="col-md-12" *ngIf=post>
+	<h1>{{post.title}}</h1>
+
+	<p>
+		{{post.category.name}} - <a [routerLink]="['/perfil', post.user.id]">
+		{{post.user.name + ' '+post.user.surname }}</a>
+	</p>
+
+	<div  class="card-body col-md-12" style="display: flex">
+				<div class="post-image-detail w-25" *ngIf="post.image">
+				<!-- Imagen -->
+					<img src="{{ url + 'post/image/' + post.image}}" class="w-100">
+				
+				</div>
+				<div class="post-image w-100" *ngIf="!post.image">
+				<!-- Imagen -->
+					<img src="assets/images/default-image.png" class="w-100">
+
+
+				</div>
+				<div>
+				<p class="ca ml-4" [innerHtml]="post.content">{{post.content}}</p>
+				</div>
+	</div>
+	
+	
+</div>
