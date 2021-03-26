@@ -2,13 +2,234 @@
 	Cargando...
 </div>
 
-<div class="container-fluid mt-3" *ngIf="posts">
+<!-- Start slider  -->
+<section id="aa-slider">
+	<div class="aa-slider-area">
+		<!-- Top slider -->
+		<div class="aa-top-slider">
+			<!-- Top slider single slide -->
 
-	<hr>
+			<!-- Top slider single slide -->
+			<div class="aa-top-slider-single">
+				<img src="../../../assets/images/Diseño sin título.jpg" alt="img">
+				<!-- Top slider content -->
 
-		<!-- Listado de entradas -->
-	<post-list [posts]="posts"
-				[identity]="identity"
-				[url]="url"></post-list>
+				<!-- / Top slider content -->
+			</div>
+			<!-- / Top slider single slide -->
+		</div>
+	</div>
+</section>
+<!-- End slider  -->
 
-</div>
+<!-- Advance Search -->
+<section id="aa-advance-search">
+	<div class="container">
+		<div class="aa-advance-search-area">
+			<div class="form">
+				<div class="aa-advance-search-top">
+					<div class="row">
+
+						<div class="col-md-2">
+							<div class="aa-single-advance-search">
+								<select>
+									<option value="0" selected>Operación</option>
+									<option value="1">Venta</option>
+									<option value="2">Alquiler</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="aa-single-advance-search">
+								<select>
+									<option value="0" selected>Tipo de inmueble</option>
+									<option value="1">Locales</option>
+									<option value="2">Oficinas</option>
+									<option value="3">Departamentos</option>
+									<option value="4">Galpones</option>
+									<option value="5">Terrenos</option>
+									<option value="6">Casas</option>
+									<option value="7">Cocheras</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="aa-single-advance-search">
+								<select>
+									<option value="0" selected>Dormitorios</option>
+									<option value="1">Monoambiente</option>
+									<option value="2">1 Dormitorio</option>
+									<option value="3">2 Dormitorios</option>
+									<option value="4">3 Dormitorios</option>
+									<option value="4">4 Dormitorios</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="aa-single-advance-search">
+								<select id="zona">
+									<option value="0" selected>Zona</option>
+									<option value="1">Centro</option>
+									<option value="2">Centro y Nva cba</option>
+									<option value="3">Nueva Córdoba</option>
+									<option value="4">Zona norte</option>
+									<option value="4">Zona sur</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="aa-single-advance-search">
+								<input class="aa-search-btn" type="submit" value="Buscar" (click)="buscar(a, b,c, zona)">
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Latest property -->
+<section id="aa-latest-property">
+	<div class="container">
+		<div class="aa-latest-property-area">
+			<div class="aa-title">
+				<h2>Latest Properties</h2>
+				<span></span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+			</div>
+			<div class="aa-latest-properties-content">
+				<div class="row">
+					<div class="col-md-4" *ngFor="let post of posts">
+						<article class="aa-properties-item">
+							<a href="#" class="aa-properties-item-img">
+								<img src="{{ url + 'post/image/' + post.image}}" alt="img">
+							</a>
+							<div class="aa-tag for-rent">
+								For Sale
+							</div>
+							<div class="aa-properties-item-content">
+								<div class="aa-properties-info">
+									<span>5 Rooms</span>
+									<span>2 Beds</span>
+									<span>3 Baths</span>
+									<span>1100 SQ FT</span>
+								</div>
+								<div class="aa-properties-about">
+									<h3><a href="#">{{post.title}}</a></h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam
+										odit vitae.</p>
+								</div>
+								<div class="aa-properties-detial">
+									<span class="aa-price">
+										$35000
+									</span>
+									<a href="#" class="aa-secondary-btn">View Details</a>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- / Latest property -->
+
+<!-- Service section -->
+<section id="aa-service">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="aa-service-area">
+					<div class="aa-title">
+						<h2>Our Service</h2>
+						<span></span>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+					</div>
+					<!-- service content -->
+					<div class="aa-service-content">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="aa-single-service">
+									<div class="aa-service-icon">
+										<span class="fa fa-home"></span>
+
+									</div>
+									<div class="aa-single-service-content">
+										<h4><a href="#">Property Sale</a></h4>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores
+											itaque dolorem at.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="aa-single-service">
+									<div class="aa-service-icon">
+										<span class="fa fa-check"></span>
+									</div>
+									<div class="aa-single-service-content">
+										<h4><a href="#">Property Rent</a></h4>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores
+											itaque dolorem at.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="aa-single-service">
+									<div class="aa-service-icon">
+										<span class="fa fa-crosshairs"></span>
+									</div>
+									<div class="aa-single-service-content">
+										<h4><a href="#">Property Development</a></h4>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores
+											itaque dolorem at.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="aa-single-service">
+									<div class="aa-service-icon">
+										<span class="fa fa-bar-chart-o"></span>
+									</div>
+									<div class="aa-single-service-content">
+										<h4><a href="#">Market Analysis</a></h4>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus quasi asperiores
+											itaque dolorem at.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- / Service section -->
+
+<!-- Promo Banner Section -->
+<section id="aa-promo-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="aa-promo-banner-area">
+					<h3>Find Your Best Property</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ex illum corporis quibusdam numquam
+						quisquam optio explicabo. Officiis odit quia odio dignissimos eius repellat id!</p>
+					<a href="#" class="aa-view-btn">View Details</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- / Promo Banner Section -->
+
+
+<!--<div class="container-fluid mt-3" *ngIf="posts">
+	 Listado de entradas -->
+<!--	<post-list [posts]="posts" [identity]="identity" [url]="url"></post-list>
+
+</div>-->

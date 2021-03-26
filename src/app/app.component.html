@@ -1,10 +1,12 @@
-<div class="container"> <!--CONTENEDOR PRINCIPAL -->
-  <br>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary"><!--BARRA DE NAVEGACIÓN-->
+<div class="">
+  <!--CONTENEDOR PRINCIPAL -->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-color">
+    <!--BARRA DE NAVEGACIÓN-->
     <a class="navbar-brand" href="#">
-    <img src="assets/images/angular-lg.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Inmobiliaria</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="assets/images/angular-lg.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Inmobiliaria</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -27,12 +29,13 @@
       </ul>
       <ul class="navbar-nav navbar-right" *ngIf="identity ">
         <li *ngIf="identity && identity.image" class="avatar_nav">
-            <div class="avatar_mask"> 
+          <div class="avatar_mask">
             <img src="{{url + 'avatar/'+ identity.image}}" class="avatar-edit" />
-            </div>
+          </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             {{ identity.name +' '+identity.surname }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -44,39 +47,45 @@
             <a class="dropdown-item" [routerLink]="['/logout/1']">Salir</a>
           </div>
         </li>
-          </ul>
+      </ul>
     </div>
   </nav><!-- CERRAR BARRA DE NAVEGACIÓN-->
   <!--Contenido-->
   <router-outlet></router-outlet>
 
 
-  <footer>
-    <hr>
-    <div class="footer_widget get_in_touch">
-          <div class="row">
-            <div class="">
+  <footer id="aa-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-footer-area">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="aa-footer-left">
+                  <p>Designed by GrupoSlant</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="aa-footer-middle">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                  <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="aa-footer-right">
+                  <a href="#">Home</a>
+                  <a href="#">Support</a>
+                  <a href="#">License</a>
+                  <a href="#">FAQ</a>
+                  <a href="#">Privacy & Term</a>
+                </div>
+              </div>
             </div>
-            <div class="">                                    
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Avenida Hipolito Yrigoyen 123 PISO 2 <br>
-               Córdoba Capital, Argentina</span>
-               <br>
-            </div>            
-            <div class="">
-              <span><i class="fa fa-phone" aria-hidden="true"></i> <a style="color:#fff" href="tel:5493513077390">351 3077 390</a></span> 
-              <br>            
-              <span><i class="far fa-envelope"></i> <a style="color:#fff" href="mailto:info@inmobiliaria.com.ar">info@inmobiliaria.com.ar</a></span> 
-              <br>
-            </div>
-            <div class="">            
-
-              <span><i class="far fa-clock"></i> Lunes a Viernes<br>
-              <strong>Ventas </strong><i class="fa fa-phone" aria-hidden="true"> <a style="color:#fff" href="tel:5493513077390">5493513077390</a></i><br>
-              <strong>Administración:</strong> 9hs a 13hs <i class="fa fa-phone" aria-hidden="true"> <a style="color:#fff" href="tel:5707050">5707050</a></i></span> 
-            </div>                              
           </div>
-        </div> 
-    <hr>
+        </div>
+      </div>
+    </div>
   </footer>
 </div><!-- CERRAR CONTENEDOR PRINCIPAL -->
